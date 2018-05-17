@@ -65,59 +65,18 @@
                     </Row>
                 </div>
                 <div class="content-box">
-                    <Row type="flex" justify="center" align="middle" class="code-row-bg">
-                        <Col span="8"><p>img</p></Col>
-                        <Col span="16">
-                            <p >习近平为你描绘的“新时代”</p>
-                            <span>2017-10-23</span>
-                        </Col>
-                    </Row>
-
-                    <Row type="flex" justify="center" align="middle" class="code-row-bg">
-                        <Col span="8"><p>img</p></Col>
-                        <Col span="16">
-                            <p >中国的红色梦想”</p>
-                            <span>2017-10-23</span>
-                        </Col>
-                    </Row>
-
-                    <Row type="flex" justify="center" align="middle" class="code-row-bg">
-                        <Col span="8"><p>img</p></Col>
-                        <Col span="16">
-                            <p >新时代，新征程</p>
-                            <span>2017-10-23</span>
-                        </Col>
-                    </Row>
-
-                    <Row type="flex" justify="center" align="middle" class="code-row-bg">
-                        <Col span="8"><p>img</p></Col>
-                        <Col span="16">
-                            <p >传承丝路精神</p>
-                            <span>2017-10-23</span>
-                        </Col>
-                    </Row>
-
-                    <Row type="flex" justify="center" align="middle" class="code-row-bg">
-                        <Col span="8"><p>img</p></Col>
-                        <Col span="16">
-                            <p >这三“气”习近平最为看重</p>
-                            <span>2017-10-23</span>
-                        </Col>
-                    </Row>
-
-                    <Row type="flex" justify="center" align="middle" class="code-row-bg">
-                        <Col span="8"><p>img</p></Col>
-                        <Col span="16">
-                            <p >世界之问的中国答案</p>
-                            <span>2017-10-23</span>
-                        </Col>
-                    </Row>
-
-                    <Row type="flex" justify="center" align="middle" class="code-row-bg">
-                        <Col span="8"><p>img</p></Col>
-                        <Col span="16">
-                            <p >金砖再起航</p>
-                            <span>2017-10-23</span>
+                    <Row
+                        type="flex"
+                        justify="center"
+                        align="middle"
+                        class="code-row-bg">
+                        <!-- <Col span="8"><p>img</p></Col> -->
+                        <Col
+                            span="16"
+                            v-for="(item, index) in list"
+                            :key="index">
+                            <p @click="gotoDetail(item.id)">{{ item.title}}</p>
+                            <span>{{ item.date}}</span>
                         </Col>
                     </Row>
 
@@ -131,3 +90,6 @@
 <style lang="sass" scoped>
 @import './index.scss'
 </style>
+
+<script src="./index.js">
+</script>

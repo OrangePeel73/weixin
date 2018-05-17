@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
+import IndexDetail from '@/components/detailIndex'
 import Index from '@/pages/index/index.vue'
 import Jiceng from '@/pages/jiceng/jiceng.vue'
 
@@ -16,6 +16,12 @@ export default new Router({
       path: '/index',
       name: 'Index',
       component: Index
+    },
+    //  详情
+    {
+      path: '/index/:id',
+      name: 'index.detail',
+      component: IndexDetail
     },
     {
       path: '/jiceng',
