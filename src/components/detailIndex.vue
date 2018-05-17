@@ -22,7 +22,7 @@
 #indexDetail{
   header{
     height:60px;
-    background-color: #1f2126;
+    background-color: #495060;
     color:#fafafa;
     .icon{
       float:left;
