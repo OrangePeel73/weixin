@@ -9,11 +9,11 @@
         </Icon>
       </span>
 
-      <h2 class="title">{{ searchInfoList[0].title }}</h2>
+      <h2 class="title">{{ searchInfoList.title }}</h2>
     </header>
 
     <article>
-      <p>{{ searchInfoList[0].contents }}</p>
+      <p>{{ searchInfoList.contents }}</p>
     </article>
   </div>
 </template>
@@ -56,8 +56,10 @@ export default {
   methods: {
     getDetailInfoById () {
       axios.get(`http://47.95.225.58:3000/dyn/findById/${this.detailId}`).then((res) => {
-        console.log(res.data)
-        this.searchInfoList = res.data
+        console.log(res.data[0].contents)
+        res.data[0].contents = res.data[0].contents.replace(/<p>/g, '')
+        res.data[0].contents = res.data[0].contents.replace(/<\/p>/g, '')
+        this.searchInfoList = res.data[0]
         console.log(this.searchInfoList)
       }).catch((error) => {
         console.log(error)
